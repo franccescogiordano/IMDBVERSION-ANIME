@@ -1,28 +1,37 @@
 import {
-    BrowserRouter as Router, Switch, Route,  Redirect} from "react-router-dom";
-import { PantallaPrincipal } from "../components/Anime/PantallaPrincipal";
+    BrowserRouter as Router, Routes, Route,  Navigate } from "react-router-dom";
+import { PantallaPrincipal } from "../components/PantallaPrincipal";
 import { Detalles } from "../components/Detalles";
 import { AnimeFavorito } from "../components/AnimeFavorito";
-import { NavbarScreen } from "../components/Navbar/NavbarScreen";
+import { NavBar } from "../components/NavBar";
 import { DibujarScreen } from "../components/DibujarScreen";
 
-export const AppRouter = () => {
+export const RutasFile = () => {
     return (
+        <div>
         <Router>
+        <div className="covertor">
             <DibujarScreen/>
-            <NavbarScreen/>
-            <Switch>
-                <Route exact path="/">
-                    <PantallaPrincipal/>
+            <div className="stream">
+            <NavBar/>
+            <Routes>
+                <Route path="/" element={<PantallaPrincipal/>}>
                 </Route>
-                <Route exact path="/listaFavoritos">
-                    <AnimeFavorito/>
+                <Route path="/listaFavoritos" element={ <AnimeFavorito/>}>
+                   
                 </Route>
-                <Route path="/id" >
-                    <Detalles/>
+                <Route path="/id" element={  <Detalles/>}>
+                   
                 </Route>
-                <Redirect to="/" />
-            </Switch>
+       
+                <Route element={  <Navigate  to="/" />}>
+                   
+                </Route>
+                
+            </Routes>
+            </div>
+            </div>
         </Router>
+        </div>
     )
 }
