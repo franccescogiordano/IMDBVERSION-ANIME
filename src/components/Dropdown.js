@@ -1,24 +1,27 @@
 import { Link } from "react-router-dom";
-import { UsarDibujo } from "./UsarDibujo";
+import { useDibujo } from "./useDibujo";
 import { generos } from "./generos";
+import React, { Component }  from 'react';
 export const Dropdown = () => {
 
-    const { click, handleClick,closeMobileMenu } = UsarDibujo();
+    const { click, handleClick,closeMobileMenu ,handleAnimeByGenre} = useDibujo();
 
     return (
         <>
             <ul onClick={handleClick} className={click ? "dropdown-menu clicked" : "dropdown-menu"}>
                 {
-                    generos.map((genre,idx)=>{
+                    generos.map((genero,idx)=>{
                         return(
-                            <li key={idx}>
-                            <Link
-                            to="#"
-                            className="dropdown-link"
-                            onClick={closeMobileMenu}
-                            >
-                                {genre.name}
-                            </Link>
+                            <li
+                            onClick={()=>handleAnimeByGenre(genero.number,genero.name)}
+                            key={idx}>
+                                <Link
+                                to="/"
+                                className="dropdown-link"
+                                onClick={closeMobileMenu}
+                                >
+                                    {genero.name}
+                                </Link>
                             </li>
                         )
                     })

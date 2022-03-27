@@ -1,18 +1,18 @@
 export const generos=[
     {
-        name:"Action",
+        name:"Accion",
         number:1,
     },
     {
-        name:"Adventure",
+        name:"Aventura",
         number:2,
     },
     {
-        name:"Comedy",
+        name:"Comedia",
         number:4,
     },
     {
-        name:"Mystery",
+        name:"Misterio",
         number:7,
     },
     {
@@ -20,7 +20,7 @@ export const generos=[
         number:8,
     },
     {
-        name:"Horror",
+        name:"Terror",
         number:14,
     },
 

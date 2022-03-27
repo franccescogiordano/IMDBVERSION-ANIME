@@ -5,7 +5,7 @@ import { Detalles } from "../components/Detalles";
 import { AnimeFavorito } from "../components/AnimeFavorito";
 import { NavBar } from "../components/NavBar";
 import { DibujarScreen } from "../components/DibujarScreen";
-
+import React, { Component }  from 'react';
 export const RutasFile = () => {
     return (
         <div>
@@ -17,14 +17,14 @@ export const RutasFile = () => {
             <Routes>
                 <Route path="/" element={<PantallaPrincipal/>}>
                 </Route>
-                <Route path="/listaFavoritos" element={ <AnimeFavorito/>}>
+                <Route path="/listaFavoritos" element={<AnimeFavorito/>}>
                    
                 </Route>
-                <Route path="/id" element={  <Detalles/>}>
+                <Route path="/:id" element={<Detalles/>}>
                    
                 </Route>
        
-                <Route element={  <Navigate  to="/" />}>
+                <Route element={<Navigate  to="/" />}>
                    
                 </Route>
                 

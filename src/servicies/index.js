@@ -1,9 +1,9 @@
-import axios from './index';
+import axios from './config';
 export const service_imdb_anime = () =>{
-    const getTop =()=>{
+    const getTop =(tier)=>{
         return axios({
             method: 'GET',
-            url: '/top/anime/1/upcoming',
+            url: `/top/anime/1/${tier}`,
         })
     }
     const getCharactersStaff  =(animeId)=>{
@@ -30,27 +30,41 @@ export const service_imdb_anime = () =>{
             url: `/anime/${animeId}/news`,
         })
     }
-    const getRecommendations =(animeId)=>{
+    const getMoreInfo =(animeId)=>{
         return axios({
             method: 'GET',
-            url: `/anime/${animeId}/recommendations`,
+            url: `/anime/${animeId}/moreinfo`,
         })
     }
 
+    const getGenre =(type)=>{
+        return axios({
+            method: 'GET',
+            url: `search/anime?genero=${type}`,
+        })
+    }
+    const getPictures  =(animeId)=>{
+        return axios({
+            method: 'GET',
+            url: `/anime/${animeId}/pictures`,
+        })
+    }
     const getSearchAnimeByName =(animeName)=>{
         return axios({
             method: 'GET',
-            url: `search/anime?q=${animeName}`,
+            url: `search/anime?q=${animeName}&limit=5`,
         })
     }
 
     return{
         getTop,
+        getGenre,
         getCharactersStaff,
+        getPictures,
         getVideos,
         getEpisodes,
         getNews,
-        getRecommendations,
-        getSearchAnimeByName
+        getMoreInfo,
+        getSearchAnimeByName,
     }
 }

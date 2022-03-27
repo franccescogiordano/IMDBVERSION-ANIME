@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
-import { UsarDibujo } from "./UsarDibujo";
+import { useDibujo } from "./useDibujo";
 import { Dropdown } from "./Dropdown";
+import React, { Component }  from 'react';
 export const DibujarScreen = () => {
     const { click, handleClick,closeMobileMenu,dropdown,onMouseEnter,
-        onMouseLeave, } = UsarDibujo();
+        onMouseLeave,handleAnimeList } = useDibujo();
     return (  
         <>
         <nav className="navbar">
-            <Link to='/' className="navbar-logo">
+        <Link
+                onClick={()=>handleAnimeList("tv","TV")}
+                to='/' className="navbar-logo">
       
                 <span>IMDB</span>VERSION-ANIME
             </Link>
@@ -15,19 +18,23 @@ export const DibujarScreen = () => {
   
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-                <li className="nav-item">
+            <li
+                    onClick={()=>handleAnimeList("upcoming","Proximamente...")}
+                    className="nav-item">
                     <Link to='/' className="nav-links" onClick={closeMobileMenu}>
             
                         Por venir...
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link to='/favoritesList' className="nav-links" onClick={closeMobileMenu}>
+                    <Link to='/listaFavoritos' className="nav-links" onClick={closeMobileMenu}>
                        
                         Mis preferidos
                     </Link>
                 </li>
-                <li className="nav-item">
+                <li
+                    onClick={()=>handleAnimeList("airing","Most Popular")}
+                    className="nav-item">
                     <Link to='/' className="nav-links" onClick={closeMobileMenu}>
                        Mas Famoso
                     </Link>
@@ -36,9 +43,9 @@ export const DibujarScreen = () => {
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
                 >
-                    <Link to='/' className="nav-links" onClick={closeMobileMenu}>
+                      <div className="nav-links" onClick={closeMobileMenu}>
                         Genero
-                    </Link>
+                        </div>
                     {dropdown && <Dropdown/>}
                 </li>
             </ul>

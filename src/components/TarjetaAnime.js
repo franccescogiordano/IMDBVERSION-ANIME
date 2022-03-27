@@ -1,23 +1,38 @@
-import { Link } from "react-router-dom";
 
-export const TarjetaAnime = () => {
+import { useDetailAnime } from "./useDetailAnime";
+import React  from 'react';
+export const TarjetaAnime = (anime) => {
+    const { handleNameAndDate } = useDetailAnime();
     return (
-        <div className="card">
-            <Link to="/id">
+        <div
+        onClick={()=>handleNameAndDate(anime.title,anime.start_date,anime.mal_id)}
+        className="tarjeta">
+            <div>
                 <div className="img1"
+                style={{backgroundImage: `url(${anime.image_url})`}}
                 ></div>
                 <div className="img2"
-            
+                style={{backgroundImage: `url(${anime.image_url})`}}
                 ></div>
-                <div className="title"></div>
-                <div className="text-card"></div>
-                <div className="catagory">Series
+                <div className="title">{anime.title}</div>
+                <div className="text-tarjeta">
+                    Start date: { anime.start_date }
+                    <br/>
+                    Start date: { anime.end_date ? anime.end_date : `Unknown date` }
+                </div>
+                <div className="score">{anime.score}
                   
                 </div>
-                <div className="views">20211
-            
+                <div className="rank">{anime.rank}
+                 
                 </div>
-            </Link>
+                <div className="catagory">{anime.type}
+                 
+                </div>
+                <div className="views">{anime.members}
+               
+                </div>
+            </div>
         </div>
     )
 }
