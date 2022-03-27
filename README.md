@@ -10,4 +10,4 @@ para poder instalar todo.
 Cade resaltar que debera tener instalado node en su computador.
 
 ### Video Explicativo
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
+[![Watch the video](https://prnt.sc/KlWiTpx742fz)](https://youtu.be/vt5fpE0bzSY)

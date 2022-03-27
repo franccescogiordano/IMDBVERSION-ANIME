@@ -8,18 +8,18 @@ export const useBuscador = () => {
 
     const dispatch = useDispatch();
 
-    const { actGetSearchAnimeByName } = animeActions();
+    const { actGetbuscarAnimeByName } = animeActions();
 
-    const { searchAnime } = useSelector(state => state.animeStreaming);
+    const { buscarAnime } = useSelector(state => state.animeStreaming);
 
     const [formValues, handleInputChange] = useForm({ animeName: '' });
 
     const { animeName } = formValues;
 
     useEffect(() => {
-        dispatch(actGetSearchAnimeByName(animeName));
+        dispatch(actGetbuscarAnimeByName(animeName));
 
-    }, [actGetSearchAnimeByName, animeName, dispatch]);
+    }, [actGetbuscarAnimeByName, animeName, dispatch]);
 
     const [showSearchDiv, setShowSearchDiv] = useState(false);
 
@@ -37,7 +37,7 @@ export const useBuscador = () => {
         animeName,
         handleInputChange,
 
-        searchAnime,
+        buscarAnime,
 
         searchContainer,
         showSearchDiv,

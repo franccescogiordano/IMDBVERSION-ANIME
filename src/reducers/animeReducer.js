@@ -10,7 +10,7 @@ const initialState ={
     episodes:[],
     news:[],
     moreInfo:[],
-    searchAnime:[],
+    buscarAnime:[],
 }
 
 export const animeReducer = (state=initialState, action) => {
@@ -60,10 +60,10 @@ export const animeReducer = (state=initialState, action) => {
                     ...state,
                 moreInfo: action.payload
             }
-        case types.getSearchAnime:
+        case types.getbuscarAnime:
             return{
                 ...state,
-                searchAnime: action.payload
+                buscarAnime: action.payload
             }
         case types.getTitleOfListAnime:
             return{

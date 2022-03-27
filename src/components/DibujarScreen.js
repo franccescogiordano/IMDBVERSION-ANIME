@@ -33,7 +33,7 @@ export const DibujarScreen = () => {
                     </Link>
                 </li>
                 <li
-                    onClick={()=>handleAnimeList("airing","Most Popular")}
+                    onClick={()=>handleAnimeList("airing","Mas Famosos..")}
                     className="nav-item">
                     <Link to='/' className="nav-links" onClick={closeMobileMenu}>
                        Mas Famoso

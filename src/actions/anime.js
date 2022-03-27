@@ -2,7 +2,7 @@ import { service_imdb_anime } from '../servicies/index';
 import { types } from '../types/types';
 
 
-const { getTop, getGenre, getCharactersStaff, getPictures, getVideos, getEpisodes, getNews, getMoreInfo, getSearchAnimeByName } = service_imdb_anime();
+const { getTop, getGenre, getCharactersStaff, getPictures, getVideos, getEpisodes, getNews, getMoreInfo, getbuscarAnimeByName } = service_imdb_anime();
 
 const actGetTop = (tier)=>async(dispatch)=>{
     try {
@@ -116,12 +116,12 @@ const actGetMoreInfo = (animeId)=>async(dispatch)=>{
     }
 }
 
-const actGetSearchAnimeByName = (animeName)=>async(dispatch)=>{
+const actGetbuscarAnimeByName = (animeName)=>async(dispatch)=>{
     try {
-        const  res = await getSearchAnimeByName(animeName);
+        const  res = await getbuscarAnimeByName(animeName);
         const { results } = res.data;
         dispatch({
-            type: types.getSearchAnime,
+            type: types.getbuscarAnime,
             payload: results
         });
     } catch (e) {
@@ -184,7 +184,7 @@ export const animeActions = ()=>{
         actGetEpisodes,
         actGetNews,
         actGetMoreInfo,
-        actGetSearchAnimeByName,
+        actGetbuscarAnimeByName,
         actGetNameAndDate,
         actGetNameList,
         actgetClearAllDetail,

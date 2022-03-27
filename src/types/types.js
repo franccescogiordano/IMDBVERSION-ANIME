@@ -8,7 +8,7 @@ export const types ={
     getListNews: '[animeStreaming] show list with news',
     getMoreInfo: '[animeStreaming] show more information of this anime',
     getNameAndDate: '[animeStreaming] get name of the anime and date by tarjeta',
-    getSearchAnime: '[animeStreaming] show list with anime by names',
+    getbuscarAnime: '[animeStreaming] show list with anime by names',
     getTitleOfListAnime: '[animeStreaming] show mame list',
     getClearAllDetail: '[animeStreaming] clear all boxes containing the anime details',
     getAddAnimeFavorite: '[animeStreaming] add anime at favorite list',

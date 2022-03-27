@@ -1,11 +1,11 @@
 import { useBuscador } from "./useBuscador";
 import React, { Component }  from 'react';
 export const VentanaDeBusqueda = () => {
-    const { searchAnime } = useBuscador();
+    const { buscarAnime } = useBuscador();
     return (
         <div className="searchWindow_contenedor">
         {
-            searchAnime.map((search,idx)=>{
+            buscarAnime.map((search,idx)=>{
                 return(
                     <div key={idx} className="search-tarjeta">
                         <img src={search.image_url} alt="art" />
@@ -19,7 +19,7 @@ export const VentanaDeBusqueda = () => {
                             </div>
                             <p className="search-desc">{search.synopsis}</p>
                             <div style={{marginTop:"15px"}}>
-                                <a  href={search.url} style={{textDecoration:"none", textAlign:"end"}} className="btn btn-more-infor">More information</a>
+                                <a  href={search.url} style={{textDecoration:"none", textAlign:"end"}} className="btn btn-more-infor">Ver Mas</a>
                             </div>
                         </div>
                     </div>

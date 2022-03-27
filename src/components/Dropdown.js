@@ -10,17 +10,17 @@ export const Dropdown = () => {
         <>
             <ul onClick={handleClick} className={click ? "dropdown-menu clicked" : "dropdown-menu"}>
                 {
-                    generos.map((genero,idx)=>{
+                    generos.map((genre,idx)=>{
                         return(
                             <li
-                            onClick={()=>handleAnimeByGenre(genero.number,genero.name)}
+                            onClick={()=>handleAnimeByGenre(genre.number,genre.name)}
                             key={idx}>
                                 <Link
                                 to="/"
                                 className="dropdown-link"
                                 onClick={closeMobileMenu}
                                 >
-                                    {genero.name}
+                                    {genre.name}
                                 </Link>
                             </li>
                         )

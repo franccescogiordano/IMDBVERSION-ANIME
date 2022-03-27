@@ -40,7 +40,7 @@ export const service_imdb_anime = () =>{
     const getGenre =(type)=>{
         return axios({
             method: 'GET',
-            url: `search/anime?genero=${type}`,
+            url: `search/anime?genre=${type}`,
         })
     }
     const getPictures  =(animeId)=>{
@@ -49,7 +49,7 @@ export const service_imdb_anime = () =>{
             url: `/anime/${animeId}/pictures`,
         })
     }
-    const getSearchAnimeByName =(animeName)=>{
+    const getbuscarAnimeByName =(animeName)=>{
         return axios({
             method: 'GET',
             url: `search/anime?q=${animeName}&limit=5`,
@@ -65,6 +65,6 @@ export const service_imdb_anime = () =>{
         getEpisodes,
         getNews,
         getMoreInfo,
-        getSearchAnimeByName,
+        getbuscarAnimeByName,
     }
 }
