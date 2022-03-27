@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/IMDBVERSION-ANIME/precache-manifest.e54ef359a38e5754a04dd5062583d7fd.js"
+  "/IMDBVERSION-ANIME/precache-manifest.7acd900135a870220a796331c943e2eb.js"
 );
 
 workbox.clientsClaim();
