@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { animeActions } from "../actions/anime";
 
-export const useDetailAnime = () => {
+export const useDetalle = () => {
 
 
     const navigate = useNavigate();

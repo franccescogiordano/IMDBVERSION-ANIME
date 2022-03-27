@@ -1,9 +1,9 @@
 import { NotFound404 } from "./NotFound404"
-import { useDetailAnime } from "./useDetailAnime";
+import { useDetalle } from "./useDetalle";
 import { TarjetaFavorito } from "./TarjetaFavorito";
 import React, { Component }  from 'react';
 export const AnimeFavorito = () => {
-    const { listaDeFavoritors, } = useDetailAnime();
+    const { listaDeFavoritors, } = useDetalle();
     return (
         <div className="favorite_contenedor">
             <h3> Tu lista de animes favoritos </h3>

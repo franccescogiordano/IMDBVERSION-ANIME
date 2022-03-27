@@ -1,7 +1,7 @@
-import { useDetailAnime } from "./useDetailAnime";
+import { useDetalle } from "./useDetalle";
 import React, { Component } from 'react';
 export const Detalles = () => {
-    const { nombreyFecha, personajesYDirectores, fotos, videos, episodes, news, moreInfo, handleFavoriteList, buscarEnlaLista, } = useDetailAnime();
+    const { nombreyFecha, personajesYDirectores, fotos, videos, episodes, news, moreInfo, handleFavoriteList, buscarEnlaLista, } = useDetalle();
     return (
         <div className="detail_contenedor">
             <div className="detail_main">

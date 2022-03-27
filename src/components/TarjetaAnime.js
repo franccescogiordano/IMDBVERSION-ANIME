@@ -1,8 +1,8 @@
 
-import { useDetailAnime } from "./useDetailAnime";
+import { useDetalle } from "./useDetalle";
 import React  from 'react';
 export const TarjetaAnime = (anime) => {
-    const { handleNameAndDate } = useDetailAnime();
+    const { handleNameAndDate } = useDetalle();
     return (
         <div
         onClick={()=>handleNameAndDate(anime.title,anime.start_date,anime.mal_id)}

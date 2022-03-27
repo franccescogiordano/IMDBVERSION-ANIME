@@ -1,8 +1,8 @@
-import { useDetailAnime } from "./useDetailAnime";
+import { useDetalle } from "./useDetalle";
 import React, { Component }  from 'react';
 export const TarjetaFavorito = (favorite) => {
 
-    const { handleNameAndDate } = useDetailAnime();
+    const { handleNameAndDate } = useDetalle();
 
     return (
         <div
